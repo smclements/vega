@@ -1,12 +1,12 @@
 ## MARKS
 
-Marks are the basic visual building block of a visualization. Similar to other mark-based frameworks such as [Protovis](http://protovis.org), marks provide basic shapes whose properties can be set according to backing data. Mark properties can be simple constants or data fields, and [Scales](#scales) can be used to map from data to property values. The basic supported mark types are rectangles (`rect`), plotting symbols (`symbol`), general paths or polygons (`path`), circular arcs (`arc`), filled areas (`area`), lines (`line`), images (`image`) and text labels (`text`).
+Marks are the basic visual building block of a visualization. Similar to other mark-based frameworks such as [Protovis](http://protovis.org), marks provide basic shapes whose properties can be set according to backing data. Mark properties can be simple constants or data fields, and [Scales](Scales) can be used to map from data to property values. The basic supported mark types are rectangles (`rect`), plotting symbols (`symbol`), general paths or polygons (`path`), circular arcs (`arc`), filled areas (`area`), lines (`line`), images (`image`) and text labels (`text`).
 
 Each mark supports a set of visual _properties_ which determine the position and appearance of mark instances. Typically one mark instance is generated per input data element; the exceptions are the `line` and `area` mark types, which represent multiple data elements as a contiguous line or area shape.
 
 There are three primary property sets: _enter_, _exit_ and _update_. _Enter_ properties are evaluated when data is processed for the first time and a mark instance is newly added to a scene. Similarly, _exit_ properties are evaluated when the data backing a mark is removed, and so the mark is leaving the visual scene. The _update_ properties are evaluated for all existing (non-exiting) mark instances. To better understand how enter, exit and update sets work, readers may wish to peruse [related D3 tutorials](http://bost.ocks.org/mike/join/). In addition, an optional _hover_ set determines visual properties when the mouse cursor hovers over a mark instance. Upon mouse out, the _update_ set is applied.
 
-There is also a special group mark type (`group`) that can contain other marks, as well as local scale, axis and legend definitions. Groups can be used to create visualizations consisting of grouped or repeated elements; examples include stacked graphs (each stack is a separate group containing a series of data values) and small multiples displays (each plot is contained in its own group). See [Group Marks](#group-marks) for more.
+There is also a special group mark type (`group`) that can contain other marks, as well as local scale, axis and legend definitions. Groups can be used to create visualizations consisting of grouped or repeated elements; examples include stacked graphs (each stack is a separate group containing a series of data values) and small multiples displays (each plot is contained in its own group). See [Group Marks](Group-Marks) for more.
 
 A mark definition typically looks something like this:
 ```json
@@ -273,7 +273,4 @@ _Note:_ at the time of writing, the _strokeDash_ and _strokeDashOffset_ use blee
 
 ### group
 
-Group marks have the same visual properties as __rect__ marks. They can also contain children marks, as well as scales, axes and legends. See the [Group Marks](#group-marks) page for more details.
-
-
------
+Group marks have the same visual properties as __rect__ marks. They can also contain children marks, as well as scales, axes and legends. See the [Group Marks](Group-Marks) page for more details.

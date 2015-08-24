@@ -41,7 +41,7 @@ A signal definition, and it's use in the rest of a specification, looks somethin
 
 | Property            | Type                | Description  |
 | :------------------ |:-------------------:| :------------|
-| name                | String              | A unique name for the signal. Reserved keywords (including `datum`, `event`, `signals` and [function names](#expressions)) may not be used.| 
+| name                | String              | A unique name for the signal. Reserved keywords (including `datum`, `event`, `signals` and [function names](Expressions)) may not be used.| 
 | init                | Object, or *        | The initial value of the signal. If `init` is an object with an `expr` property, the expression is evaluated to produce the signal's initial value. An additional `scale` property can also be specified to invoke a [Scoped Scale Reference](#scoped-scale-references).|
 
 ### Expression Values
@@ -50,7 +50,7 @@ Signal values can be determined in one of two ways: purely by other signals, or 
 
 | Property            | Type                | Description  |
 | :------------------ |:-------------------:| :------------|
-| expr                | [Expression](#expressions)| A string containing an expression (in JavaScript syntax) for the signal value. It is automatically reevaluated whenever used signal values change.| 
+| expr                | [Expression](Expressions)| A string containing an expression (in JavaScript syntax) for the signal value. It is automatically reevaluated whenever used signal values change.| 
 | scale               | [ScopedScaleRef](#scoped-scale-references) | A scale transform to apply to the expression. This can be particularly useful for inverting expression values (i.e., moving them from visual/pixel space to data space).|
 
 ### Event Stream Values
@@ -60,7 +60,7 @@ To have interaction events (e.g., `mousedown`, or `touchmove`) trigger changes i
 | Property            | Type                | Description  |
 | :------------------ |:-------------------:| :------------|
 | type                | [EventSelector](#event-stream-selectors)| A string that uses the [event selector syntax](#event-stream-selectors).| 
-| expr                | [Expression](#expressions)               | A string containing an expression (in JavaScript syntax) that is reevaluated every time the specified events occur. `event` and `datum` variables are available for use here, corresponding to the captured DOM event and the data object backing the event's target item.|
+| expr                | [Expression](Expressions)               | A string containing an expression (in JavaScript syntax) that is reevaluated every time the specified events occur. `event` and `datum` variables are available for use here, corresponding to the captured DOM event and the data object backing the event's target item.|
 
 For events that occur within the visualization, the following special event functions are also available
 
@@ -106,7 +106,7 @@ Event selectors specify the sequence of events ("event stream") that must occur 
 | ------------------- | ---------------------- |
 | eventType           | Captures events of a specific type, for example `mousedown`, or `touchmove`. By default, this captures all events of the given type that occur anywhere on the visualization.|
 | <b>target:</b>eventType | Filters for only events that occur on the given target. The following targets are recognized |
-| * markType              | Filters for events that occur on mark instances of the given type. All supported [mark types](#marks) are available. For example, `rect:mousedown` captures all `mousedown` events that occur on rect marks.|
+| * markType              | Filters for events that occur on mark instances of the given type. All supported [mark types](Marks) are available. For example, `rect:mousedown` captures all `mousedown` events that occur on rect marks.|
 | * @markName             | Filters for events that occur on marks with the given name. For example, `@cell:mousemove` captures all `mousemove` events that occur within the mark named `cell`.|
 | * CSS selector          | The full gamut of CSS selectors can be used to capture events on elements that exist outside the visualization. D3 is used to capture these events, and the custom event functions, described above, are not available. For example `#header:mouseover` captures `mouseover` events that occur on the HTML element with ID `header`.|
 | eventStream<b>[filterExpr]</b> | Filters for events that match the given expression. The filter expression is specified using normal JavaScript syntax, and the `event` and `datum` variables are also available. Multiple expressions can also be specified. For example, `mousedown[eventX() > 5][eventY() < 100]` captures `mousedown` events which occur at least 5px horizontally, and no more than 100px vertically within the visualization.| 
@@ -204,6 +204,3 @@ Dot notation can also be used to access nested signal values. For example,
   ]
 } 
 ```
-
-
------

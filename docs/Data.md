@@ -25,7 +25,7 @@ One can also load data from an external file (in this case, JSON):
 {"name": "points", "url": "data/points.json"}
 ```
 
-Or, one can simply declare the existence of a data set. The data can then be dynamically provided when the visualization is instantiated (see the [Runtime](#runtime) documentation for more):
+Or, one can simply declare the existence of a data set. The data can then be dynamically provided when the visualization is instantiated (see the [Runtime](Runtime) documentation for more):
 ```json
 {"name": "table"}
 ```
@@ -53,8 +53,8 @@ Finally, one might copy an existing data set and/or apply data transforms. In th
 | values        | JSON          |  The actual data set to use. The _values_ property allows data to be inlined directly within the specification itself. |
 | source        | String        | The name of another data set to use as the source for this data set. The _source_ property is particularly useful in combination with a transform pipeline to derive new data. |
 | url           | String        | A URL from which to load the data set. Use the _format_ property to ensure the loaded data is correctly parsed. If the _format_ property is not specified, the data is assumed to be in a row-oriented JSON format. |
-| transform     | Array&lt;Transform&gt;     | An array of transforms to perform on the data. Transform operators will be run on the default data, as provided by late-binding or as specified by the _source_, _values_, or _url_ properties. See the [Data Transforms](#data-transforms) documentation for more details. |
-| modify        | Array&lt;StreamingOps&gt;  | An array of streaming operators to insert, remove, &amp; toggle data values, or clear the data set entirely. These operators are run _after_ data transforms. See the [Streaming Data](#streaming-data) documentation for more details. |
+| transform     | Array&lt;Transform&gt;     | An array of transforms to perform on the data. Transform operators will be run on the default data, as provided by late-binding or as specified by the _source_, _values_, or _url_ properties. See the [Data Transforms](Data-Transforms) documentation for more details. |
+| modify        | Array&lt;StreamingOps&gt;  | An array of streaming operators to insert, remove, &amp; toggle data values, or clear the data set entirely. These operators are run _after_ data transforms. See the [Streaming Data](Streaming-Data) documentation for more details. |
 
 
 ### Formats
@@ -106,11 +106,8 @@ Load a JavaScript Object Notation (JSON) file that contains hierarchical (tree) 
 
 ### Transforms
 
-Data sets can also be manipulated by a number of transforms. Transformations are specified as an array of transform definitions. See the [Data Transforms](#data-transforms) documentation for more details.
+Data sets can also be manipulated by a number of transforms. Transformations are specified as an array of transform definitions. See the [Data Transforms](Data-Transforms) documentation for more details.
 
 ### Streaming Data
 
-Vega 2.0 supports streaming inserts, updates, and removals of data values. Streaming operations can be specified directly within the specification, or can be executed via an API for external updates. See the [Streaming Data](#streaming-data) documentation for more details.
-
-
------
+Vega 2.0 supports streaming inserts, updates, and removals of data values. Streaming operations can be specified directly within the specification, or can be executed via an API for external updates. See the [Streaming Data](Streaming-Data) documentation for more details.

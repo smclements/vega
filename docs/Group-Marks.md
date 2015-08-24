@@ -1,6 +1,6 @@
 ## GROUP MARKS
 
-Group marks are a special kind of mark that can contain other marks. A group mark definition is in many ways similar to the top-level [Visualization](visualization) definition: a group can contain scales, axes, legends and marks. However, note that one can not set top-level `width`, `height`, `padding` or `data` definitions. Instead, group marks use the same `"from"` data definition and visual property sets as other marks.
+Group marks are a special kind of mark that can contain other marks. A group mark definition is in many ways similar to the top-level [Visualization](Visualization) definition: a group can contain scales, axes, legends and marks. However, note that one can not set top-level `width`, `height`, `padding` or `data` definitions. Instead, group marks use the same `"from"` data definition and visual property sets as other marks.
 
 Group marks can be used in a variety of designs. For example:
 * To incorporate multiple visualizations within the same Vega specification.
@@ -15,9 +15,9 @@ Group marks support the same visual properties as `rect` marks. For instance, gr
 
 Group marks are populated from data just like any other mark: the `from` property defines a source data set along with any desired data transforms. One group instance will be created for each element in the backing data set. If no `from` property is specified, the group will receive data from its parent group (if it is nested within another group) or will be backed by a single null value (if it is a top-level group).
 
-Groups differ from other mark types in their ability to contain children marks. Marks defined within a group mark can _inherit_ data from their parent group. For inheritance to work each data element for a group must contain data elements of its own. This arrangement of nested data is typically achieved by _facetting_ the data, such that each group-level data element includes its own array of sub-elements. Facets can be constructed using the __facet__ or __window__ data transforms (see the [Data Transforms](#transform) page) or can be loaded directly as hierarchical data (e.g., using the __treejson__ data type, see the [Data](#data) page for more).
+Groups differ from other mark types in their ability to contain children marks. Marks defined within a group mark can _inherit_ data from their parent group. For inheritance to work each data element for a group must contain data elements of its own. This arrangement of nested data is typically achieved by _facetting_ the data, such that each group-level data element includes its own array of sub-elements. Facets can be constructed using the __facet__ or __window__ data transforms (see the [Data Transforms](Data-Transform) page) or can be loaded directly as hierarchical data (e.g., using the __treejson__ data type, see the [Data](Data) page for more).
 
-### Scales, Axes and Legengs
+### Scales, Axes and Legends
 
 Groups can also contain their own `scales`, `axes`, and `legends` definitions. These definitions are the same as those used in a top-level visualization definition, barring a few simple differences:
 

@@ -29,7 +29,7 @@ Axes provide three types of tick marks: major, minor and end ticks. Minor ticks 
 
 ### Custom Axis Styles
 
-Custom mark properties can be set for all axis elements through the axis __properties__ setting. The addressable elements are `ticks` (both major and minor), `majorTicks`, `minorTicks`, `grid` (for gridlines), `labels`, `title` and `axis` (for the axis line, including end ticks). Each element can be styled using standard Vega _Value References_, as described in the [Marks](#marks) documentation.
+Custom mark properties can be set for all axis elements through the axis __properties__ setting. The addressable elements are `ticks` (both major and minor), `majorTicks`, `minorTicks`, `grid` (for gridlines), `labels`, `title` and `axis` (for the axis line, including end ticks). Each element can be styled using standard Vega _Value References_, as described in the [Marks](Marks) documentation.
 
 Note that enclosing ticks at the start and end of the axis are drawn as part of the axis baseline. Custom styling properties for `axis` will thus affect both the axis line and the end ticks, if shown.
 
@@ -68,6 +68,3 @@ The following example shows how to set custom colors, thickness, text angle, and
 ```
 
 Custom text can be defined using the `"text"` property for `labels`. For example, one could define an ordinal scale that serves as a lookup table from axis values to axis label text.
-
-
------

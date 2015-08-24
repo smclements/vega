@@ -25,7 +25,7 @@ Scales are functions that transform a _domain_ of data values (numbers, dates, s
 | padding       | Number        | Applies spacing among ordinal elements in the scale range. The actual effect depends on how the scale is configured. If the __points__ parameter is `true`, the padding value is interpreted as a multiple of the spacing between points. A reasonable value is 1.0, such that the first and last point will be offset from the minimum and maximum value by half the distance between points. Otherwise, padding is typically in the range [0, 1] and corresponds to the fraction of space in the range interval to allocate to padding. A value of 0.5 means that the range band width will be equal to the padding width. For more, see the [D3 ordinal scale documentation](https://github.com/mbostock/d3/wiki/Ordinal-Scales).|
 | sort          | Object        | If set, the values in the scale domain will be sorted based on an aggregate calculation over a specified sort field.|
 | sort field    | Field         | The field name to aggregate over.|
-| sort op       | String        | A valid [aggregation operation](#data-transforms#-aggregate) (e.g., `mean`, `median`, etc.)|
+| sort op       | String        | A valid [aggregation operation](Data-Transforms#-aggregate) (e.g., `mean`, `median`, etc.)|
 | sort order    | String        | Either `asc` or `desc` for ascending or descending, respectively.|
 
 ### Time Scale Properties

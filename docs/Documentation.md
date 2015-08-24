@@ -8,7 +8,7 @@ While intended to be a general (platform-agnostic) specification, Vega has been 
 
 ## Overview
 
-A Vega __specification__ is simply a [JSON](http://en.wikipedia.org/wiki/JSON) object that describes an interactive visualization design. We will refer to the top-level object as the _Visualization_ specification. A [[Visualization]] consists of basic properties (such as the width and height of the view) and definitions for: the [[Data]] to visualize, [[Scales]] that map data values to visual values, [[Axes]] and [[Legends]] that visualize these scales, graphical [[Marks]] (such as rectangles, circles, arcs, etc) that visualize the data, [[Signals]] to capture user interaction and [[Predicates]] to modify the visualization in response.
+A Vega __specification__ is simply a [JSON](http://en.wikipedia.org/wiki/JSON) object that describes an interactive visualization design. We will refer to the top-level object as the _Visualization_ specification. A [Visualization](Visualization) consists of basic properties (such as the width and height of the view) and definitions for: the [Data](Data) to visualize, [Scales](Scales) that map data values to visual values, [Axes](Axes) and [Legends](Legends) that visualize these scales, graphical [Marks](Marks) (such as rectangles, circles, arcs, etc) that visualize the data, [Signals](Signals) to capture user interaction and [Predicates](Predicates) to modify the visualization in response.
 
 To start learning Vega, we recommend first working through the introductory __[Bar Chart Tutorial](Tutorial)__.
 
@@ -18,15 +18,17 @@ Next, you can explore the online examples in the __[Vega Editor](http://vega.git
 
 Documentation for each major component of a Vega specification can be found on these wiki pages:
 
-* [[Visualization]] - Top-level visualization properties.
-* [[Data]] - Define and load data to visualize.
-* [[Data Transforms]] - Transform data prior to visualization.
-* [[Scales]] - Map data properties to visual properties using scales.
-* [[Axes]] - Axes visualize scales for spatial encodings.
-* [[Legends]] - Legends visualize scales for color, shape and size encodings.
-* [[Marks]] - Visualize data using various graphical marks.
-  * [[Group Marks]] - A special kind of mark that can contain other marks.
-* [[Signals]] - Dynamic variables to drive interactive behaviors.
-* [[Predicates]] - Conditions (or "selections") to modify mark properties.
-* [[Runtime]] - Deploying and using the browser-based Vega runtime.
-* [[Headless Mode]] - Server-side Vega using "headless" rendering.
+| Page          | Description  |
+| :------------ | :------------|
+| [Visualization](Visualization) | Top-level visualization properties. |
+| [Data](Data)                   | Define and load data to visualize.  |
+| [Data Transforms](Data-Transforms) | Transform data prior to visualization. |
+| [Scales](Scales)               | Map data properties to visual properties using scales. |
+| [Axes](Axes)                   | Axes visualize scales for spatial encodings. |
+| [Legends](Legends)             | Legends visualize scales for color, shape and size encodings. |
+| [Marks](Marks)                 | Visualize data using various graphical marks. |
+| [Group Marks](Group-Marks)     | A special kind of mark that can contain other marks. |
+| [Signals](Signals)             | Dynamic variables to drive interactive behaviors. |
+| [Predicates](Predicates)       | Conditions (or "selections") to modify mark properties. |
+| [Runtime](Runtime)             | Deploying and using the browser-based Vega runtime. |
+| [Headless Mode](Headless-Mode) | Server-side Vega using "headless" rendering. |

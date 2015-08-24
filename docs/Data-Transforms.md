@@ -321,7 +321,7 @@ Extends data elements with new values according to a calculation formula.
 | Property            | Type                | Description  |
 | :------------------ |:-------------------:| :------------|
 | field               | String              | The property name in which to store the computed formula value.|
-| expr                | [Expression](#expressions)| A string containing an expression (in JavaScript syntax) for the formula. The [expression language](#expressions) includes the variable `datum`, corresponding to the current data object. 
+| expr                | [Expression](Expressions)| A string containing an expression (in JavaScript syntax) for the formula. The [expression language](Expressions) includes the variable `datum`, corresponding to the current data object. 
 
 
 The __formula__ transform returns the input data set, with each element extended with the computed formula value.

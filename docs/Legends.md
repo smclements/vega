@@ -20,7 +20,7 @@ Legends take one or more scales as their primary input. At least one of the __si
 | properties    | Object        | Optional mark property definitions for custom legend styling. The input object can include sub-objects for `title`, `labels`, `symbols` (for discrete legend items), `gradient` (for a continuous color gradient) and `legend` (for the overall legend group).|
 
 ### Custom Legend Styles
-Custom mark properties can be set for all legend elements through the legend __properties__ setting. The addressable elements are the `title`, `labels`, `symbols` (for discrete legend items), `gradient` (for a continuous color gradient) and `legend` (for the overall legend group). Each element can be styled using standard Vega _Value References_, as described in the [Marks](#marks) documentation.
+Custom mark properties can be set for all legend elements through the legend __properties__ setting. The addressable elements are the `title`, `labels`, `symbols` (for discrete legend items), `gradient` (for a continuous color gradient) and `legend` (for the overall legend group). Each element can be styled using standard Vega _Value References_, as described in the [Marks](Marks) documentation.
 
 The following example shows how to set custom fonts and a border on a legend for a fill color encoding.
 ```json
