@@ -1,5 +1,4 @@
-## LEGENDS
-
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Legends**
 
 Similar to axes, legends visualize scales. However, whereas axes aid interpretation of scales with spatial ranges, legends aid interpretation of scales with ranges such as colors, shapes and sizes. Similar to scales and axes, legends can be defined either at the top-level visualization, or as part of a __group__ mark.
 
@@ -49,6 +48,3 @@ The following example shows how to set custom fonts and a border on a legend for
 Custom text can be defined using the `"text"` property for `labels`. For example, one could define an ordinal scale that serves as a lookup table from axis values to axis label text.
 
 In addition, one can set the `"x"` and `"y"` properties for the `legend` to perform custom positioning, overriding automatic legend positioning.
-
-
------

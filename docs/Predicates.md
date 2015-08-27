@@ -2,15 +2,17 @@
 
 Predicates define conditions, and are used with [production rules](Marks#production-rules) to describe the visual properties of marks. They are particularly useful for allowing users to select and manipulate data and marks interactively. 
 
-## Common Predicate Properties
+### Common Predicate Properties
 
-* __name__ [String] - A unique name for the predicate.
-* __type__ [String] - The type of predicate. Supported types include comparisons (`==`, `!=`, `>`, `<`, `>=`, `<=`), boolean logic (`and`, `or`), and range/set inclusion (`in`).
-* __operands__ [Array<Objects>] - Except for `in`-type predicates, lists the operands used to determine the predicate's `true`-condition. Each operand is an object with one of the following properties:
-  * _value_ [*] - A constant value.
-  * _signal_ [String] - A signal name, and dot notation can be used to access nested signal values. 
-  * _arg_ [String] - The name of an argument, to allow this operand's value to be specified when invoking the predicate.
-  * _predicate_ [Object] - An object that specifies another predicate's `name` and key/value pairs of any arguments it takes. 
+| Property      | Type          | Description    |
+| :------------ |:-------------:| :------------- |
+| name          | String        | A unique name for the predicate. |
+| type          | String        | The type of predicate. Supported types include comparisons (`==`, `!=`, `>`, `<`, `>=`, `<=`), boolean logic (`and`, `or`), and range/set inclusion (`in`).|
+| operands      | Array<Objects>| Except for `in`-type predicates, lists the operands used to determine the predicate's `true`-condition. Each operand is an object with one of the following properties:|
+| _value_       | *             | A constant value.|
+| _signal_      | String        | A signal name, and dot notation can be used to access nested signal values.| 
+| _arg_         | String        | The name of an argument, to allow this operand's value to be specified when invoking the predicate.|
+| _predicate_   | Object        | An object that specifies another predicate's `name` and key/value pairs of any arguments it takes.| 
 
 Predicates return `true` if the specified operands meet the condition as specified by the predicate type. Consider the following example,
 ```json
@@ -41,15 +43,17 @@ The `inStock` predicate evaluates to true whenever the value of the `amount` sig
 
 If `predicateC` did not specify a `dollars` argument, then one would need to be provided when invoking `predicateC` later in the specification (i.e., argument names cascade).
 
-## In-Predicate Properties
+### In-Predicate Properties
 
 In-predicates test whether a specified item exists within a range or set (e.g., a data set or ordinal scale's domain). Besides the _name_ and _type_ properties described above, in-predicates can take the following properties:
 
-* __item__ [String] - A value, signal, or argument operand as described above.  
-* __data__ [String] - The name of a data set.
-* __field__ [String] - If _data_ is specified, the name of a field. The predicate returns true if there exists a record in the data set, where the value of given field matches _item_. 
-* __range__ [Array<Operands>] - An array with two operands. The predicate returns true if _item_ lies within the range.
-* __scale__ [[ScopedScaleRef](Signals#scoped-scale-reference)] - A scale transform to apply to the range. By using an inverse scale transform, the in-predicate can be defined over a range of data values, rather than visual or pixel values. 
+| Property      | Type          | Description    |
+| :------------ |:-------------:| :------------- |
+| item          | String        | A value, signal, or argument operand as described above.|  
+| data          | String        | The name of a data set.|
+| field         | String        | If _data_ is specified, the name of a field. The predicate returns true if there exists a record in the data set, where the value of given field matches _item_.| 
+| range         | Array<Operands>| An array with two operands. The predicate returns true if _item_ lies within the range.|
+| scale         | [ScopedScaleRef](Signals#scoped-scale-reference)  | A scale transform to apply to the range. By using an inverse scale transform, the in-predicate can be defined over a range of data values, rather than visual or pixel values.| 
 
 For example, 
 ```json

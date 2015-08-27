@@ -1,6 +1,6 @@
 __Vega__ is a _visualization grammar_, a declarative format for creating, saving and sharing interactive visualization designs. This wiki contains documentation and learning materials for getting up and running with Vega.
 
-## Documentation
+### Documentation
 
 [Vega Documentation](wiki/Documentation)
 
@@ -21,7 +21,7 @@ __Vega__ is a _visualization grammar_, a declarative format for creating, saving
 | [Headless Mode](Headless-Mode) | Server-side Vega using "headless" rendering.|
 
 
-## Tutorials and Miscellaneous
+### Tutorials and Miscellaneous
 
 | Page          | Description  |
 | :------------ | :------------|
@@ -31,7 +31,7 @@ __Vega__ is a _visualization grammar_, a declarative format for creating, saving
 | [Contribute](Contribute)       | Some project ideas for anyone interested in improving Vega.|
 
 
-## Related Links
+### Related Links
 
 * [Vega Discussion Group / Mailing List](https://groups.google.com/forum/?fromgroups#!forum/vega-js)
 * [Online Vega Editor](http://vega.github.io/vega-editor/)

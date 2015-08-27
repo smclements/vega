@@ -6,7 +6,7 @@ A Vega specification is simply a JSON object that describes an interactive visua
 
 While intended to be a general (platform-agnostic) specification, Vega has been primary designed for creating web-based visualizations using HTML5 technologies such as Canvas and SVG (Scalable Vector Graphics). This focus has inevitably sculpted the specification language to the web domain.
 
-## Overview
+### Overview
 
 A Vega __specification__ is simply a [JSON](http://en.wikipedia.org/wiki/JSON) object that describes an interactive visualization design. We will refer to the top-level object as the _Visualization_ specification. A [Visualization](Visualization) consists of basic properties (such as the width and height of the view) and definitions for: the [Data](Data) to visualize, [Scales](Scales) that map data values to visual values, [Axes](Axes) and [Legends](Legends) that visualize these scales, graphical [Marks](Marks) (such as rectangles, circles, arcs, etc) that visualize the data, [Signals](Signals) to capture user interaction and [Predicates](Predicates) to modify the visualization in response.
 
@@ -14,7 +14,7 @@ To start learning Vega, we recommend first working through the introductory __[B
 
 Next, you can explore the online examples in the __[Vega Editor](http://vega.github.io/vega-editor/)__ and read the more detailed documentation below.
 
-## Specification Components
+### Specification Components
 
 Documentation for each major component of a Vega specification can be found on these wiki pages:
 

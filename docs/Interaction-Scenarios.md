@@ -1,3 +1,5 @@
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Interaction Scenarios**
+
 This scratchpad lists various scenarios that might be handled by adding support for declarative interaction to Vega as suggested at https://github.com/vega/vega/wiki/Contribute. Some of these interaction techniques are fairly standard and described at: http://en.wikipedia.org/wiki/Interactive_visual_analysis.
 
 ### Annotation

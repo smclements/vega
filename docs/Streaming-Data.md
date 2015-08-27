@@ -2,13 +2,15 @@
 
 Vega 2.0 supports streaming data through a set of operators that can be used within the specification, and API endpoints on the [View component](#view-component-streaming-api). 
 
-## Streaming Operators
+### Streaming Operators
 
 Within a dataset definition, a pipeline of streaming operators can be defined under the __modify__ property. These operators take the following properties:
 
-* __type__ [String] - Either `insert`, `remove`, or `toggle`.
-* __signal__ [String] - A signal name, with dot notation to reference nested properties. The value of this signal is inserted, removed, or toggled from the dataset.
-* __field__ [String] - A field name under which the signal value is inserted. When removing or toggling signal values, this field name is used to find existing matches within the dataset. 
+| Property      | Type          | Description    |
+| :------------ |:-------------:| :------------- |
+| type          | String        | Either `insert`, `remove`, or `toggle`.|
+| signal        | String        | A signal name, with dot notation to reference nested properties. The value of this signal is inserted, removed, or toggled from the dataset.|
+| field         | String        | A field name under which the signal value is inserted. When removing or toggling signal values, this field name is used to find existing matches within the dataset.| 
 
 Streaming operators are only evaluated when a signal value changes. They run _after_ all data transformations for the corresponding data set have been executed. In the event that multiple operators use the same signal, operators are evaluated in their definition order.
 
@@ -48,15 +50,17 @@ Here is an excerpt of the shift-click example that demonstrates the use of strea
 }
 ```
 
-## View Component Streaming API
+### View Component Streaming API
 
 Parsing a Vega specification, and rendering a visualization, produces a [View Component](Runtime) which exposes an [API](Runtime#view-component-api). The following API methods are available to support streaming data externally:
 
-* view<b>.data(name)</b> - Returns a streaming API for the name dataset. The following methods are available, and can be invoked using a method chaining style:
-  * data<b>.insert(values)</b> - Inserts the given array of data values into the dataset.
-  * data<b>.update(where, field, modify)</b> - Updates the value of _field_ for all data values that match the _where_ condition. _where_ is a function that is called with each data value, and must return `true` or `false`. _modify_ is a function that is called with each _matching_ data value, and must return the new _field_ value. 
-  * data<b>.remove(where)</b> - Removes all data values that match the _where_ condition -- a function that is called for each data value, and must return `true` or `false`.
-  * data<b>.values()</b> - Returns all values currently in the dataset.
+| Method                      | Description    |
+| :-------------------------- | :------------- |
+| view<b>.data(name)</b>      | Returns a streaming API for the name dataset. The following methods are available, and can be invoked using a method chaining style:|
+| data<b>.insert(values)</b>  | Inserts the given array of data values into the dataset.|
+| data<b>.update(where, field, modify)</b>  | Updates the value of _field_ for all data values that match the _where_ condition. _where_ is a function that is called with each data value, and must return `true` or `false`. _modify_ is a function that is called with each _matching_ data value, and must return the new _field_ value.|
+| data<b>.remove(where)</b>   | Removes all data values that match the _where_ condition -- a function that is called for each data value, and must return `true` or `false`.|
+| data<b>.values()</b>        | Returns all values currently in the dataset.|
 
 For convenience, an object can also be passed to the data API method where keys correspond to dataset names, and values are functions that receive the corresponding dataset's streaming API. 
 

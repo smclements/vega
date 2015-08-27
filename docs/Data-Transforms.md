@@ -1,4 +1,4 @@
-## DATA TRANSFORMS
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Data Transforms**
 
 A data transform performs operations on a data set prior to visualization. Common examples include filtering and grouping (e.g., group data points with the same stock ticker for plotting as separate lines). Other examples include layout functions (e.g., stream graphs, treemaps, graph layout) that are run prior to mark encoding.
 
@@ -96,7 +96,7 @@ The _'argmin'_ and _'argmax'_ functions are a bit unusual: instead of returning 
 
 The __aggregate__ transform outputs a new array of data objects, one for each group, with the computed aggregate statistics. 
 
-## Example
+##### Example
 
 For the following input data:
 ```json
@@ -146,7 +146,7 @@ Bins raw data values into quantitative bins (e.g., for a histogram).
 
 The __bin__ transform returns the input data set, with an additional property, `bin`, that contains the binned value for the specified `field`. This property may be renamed by specifying an `output` parameter like so: `"output": {"bin": "b"}`.
 
-## Example
+##### Example
 
 ```json
 {"type": "bin", "field": "amount", "min": 0, "max": 10, "maxbins": 5}
@@ -186,7 +186,7 @@ Compute the cross-product of two data sets.
 
 The __cross__ transform outputs an array of data objects with two properties: one containing an item from the primary data set (named `a` by default), and an item from the secondary data set (named `b` by default). These names can be changed by setting the transform's output map. For example, the parameter `"output": {"left":"thing1", "right":"thing2"}`, causes the properties `thing1` and `thing2` to be used instead of `a` and `b`.
 
-## Example
+##### Example
 
 ```json
 {"type": "cross", "diagonal": false}
@@ -217,7 +217,8 @@ Organizes a data set into groups or "facets". The __facet__ transform is useful 
 
 The __facet__ transform returns a transformed data set organized into facets. Vega uses a standardized data structure for representing hierarchical or faceted data, which consists of a hierarchy of objects with __key__ and __values__ properties.
 
-## Example
+##### Example
+
 ```json
 {"type": "facet", "keys": ["category"]}
 ```
@@ -267,7 +268,7 @@ Filters elements from a data set to remove unwanted items.
 
 The __filter__ transform returns a new data set containing only elements that match the filter _test_.
 
-## Examples
+##### Examples
 
 ```json
 {"type": "filter", "test": "datum.x > 10"}
@@ -291,7 +292,7 @@ Collapse ("fold") one or more data properties into two properties: a key propert
 
 The __fold__ transform returns a new array of data objects, with two additional properties: `key` (an extracted property name), and `value` (an extracted data value). The names of these new properties can be changed by setting the transform's output map. For example, the parameter `"output": {"key": "k", "value": "v"}` causes the properties `k` and `v` to be used instead of `key` and `value`.
 
-## Example
+##### Example
 
 ```json
 {"type": "fold", "fields": ["gold", "silver"]}
@@ -326,7 +327,7 @@ Extends data elements with new values according to a calculation formula.
 
 The __formula__ transform returns the input data set, with each element extended with the computed formula value.
 
-## Examples
+##### Examples
 
 ```json
 {"type": "formula", "field": "logx", "expr": "log(datum.x)/LN10"}
@@ -350,7 +351,7 @@ Sorts the values of a data set (whether it be flat or faceted).
 
 The __sort__ transform returns the input data set with elements sorted in place.
 
-## Example
+##### Example
 
 ```json
 {"type": "sort", "by": "-_id"}
@@ -373,7 +374,7 @@ Merges two data sets together according to a provided join key. If no join key i
 
 The __zip__ transform extends the primary data set with values from a matching member of the secondary ("`with`") data set, and stores the value from the secondary data in the field specified by the _as_ parameter.
 
-## Example
+##### Example
 
 ```json
 {
@@ -413,15 +414,19 @@ Performs force-directed layout for network data. Force-directed layouts treat no
 
 
 By default, the __force__ transform sets the following values on each node datum:
-  * **layout_x** - the *x*-coordinate of the current node position.
-  * **layout_y** - the *y*-coordinate of the current node position.
-  * **layout_px** - the *x*-coordinate of the previous node position.
-  * **layout_py** - the *y*-coordinate of the previous node position.
-  * **layout_fixed** - a boolean indicating whether node position is locked.
-  * **layout_weight** - the node weight; the number of associated links.
+
+| Property            | Description         |
+| :------------------ | :------------------ |
+| layout_x            | the *x*-coordinate of the current node position.|
+| layout_y            | the *y*-coordinate of the current node position.|
+| layout_px           | the *x*-coordinate of the previous node position.|
+| layout_py           | the *y*-coordinate of the previous node position.|
+| layout_fixed        | a boolean indicating whether node position is locked.|
+| layout_weight       | the node weight; the number of associated links.|
+
 These properties may be renamed by specifying an `output` map. For example, `"output": {"fixed": "f", weight": "w"}`.
 
-## Example
+##### Example
 
 ```json
 {"type": "force", "links": "edges", "linkDistance": 70, "charge": -100, "iterations": 1000}
@@ -448,9 +453,12 @@ Performs a cartographic projection. Given longitude and latitude values, sets co
 
 
 By default, the __geo__ transform sets the following values on each datum:
-* __layout_x__, __layout_y__
+| Property            | Description         |
+| :------------------ | :------------------ |
+| layout_x            |                     |
+| layout_y            |                     |
 
-## Example
+##### Example
 
 ```json
 {
@@ -483,9 +491,12 @@ Creates paths for geographic regions, such as countries, states and counties. Gi
 
 
 By default, the __geopath__ transform sets the following values on each datum:
-* __layout_path__
 
-## Example
+| Property            | Description         |
+| :------------------ | :------------------ |
+| layout_path         |                     |
+
+##### Example
 
 ```json
 {
@@ -513,9 +524,12 @@ Computes a path definition for connecting nodes within a node-link network or tr
 
 
 By default, the __link__ transform sets the following values on each datum:
-* __layout_path__
 
-## Example
+| Property            | Description         |
+| :------------------ | :------------------ |
+| layout_path         |                     | 
+
+##### Example
 
 ```json
 {"type": "link", "shape": "line"}
@@ -541,9 +555,14 @@ Computes a pie chart layout. Given a set of data values, sets startAngle and end
 
 
 By default, the __pie__ transform sets the following values on each datum:
-* __layout_start__, __layout_end__, __layout_mid__
 
-## Examples
+| Property            | Description         |
+| :------------------ | :------------------ |
+| layout_start        |                     |
+| layout_end          |                     |
+| layout_mid          |                     |
+
+##### Examples
 
 ```json
 {"type": "pie", "value": "data.price"}
@@ -571,9 +590,14 @@ Computes layout values for stacked graphs, as in stacked bar charts or stream gr
 
 
 By default, the __stack__ transform sets the following values on each datum:
-* __layout_start__,  __layout_end__, __layout_mid__
 
-## Examples
+| Property            | Description         |
+| :------------------ | :------------------ |
+| layout_start        |                     |
+| layout_end          |                     |
+| layout_mid          |                     |
+
+##### Examples
 
 ```json
 {"type": "stack", "groupby": ["x"], "sortby": ["c"], "field": "y"}
@@ -597,9 +621,16 @@ Computes a squarified [treemap](http://en.wikipedia.org/wiki/Treemapping) layout
 
 
 By default, the treemap transform sets the following values on each datum:
-* __layout_x__, __layout_y__, __layout_width__, __layout_height__, __layout_depth__
 
-## Example
+| Property            | Description         |
+| :------------------ | :------------------ |
+| layout_x            |                     |
+| layout_y            |                     |
+| layout_width        |                     |
+| layout_height       |                     |
+| layout_depth        |                     |
+
+##### Example
 
 ```json
 {"type": "treemap", "field": "price"}

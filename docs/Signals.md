@@ -1,4 +1,4 @@
-## SIGNALS
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Signals**
 
 Signals are dynamic variables that drive interactive behaviours. They can be used throughout a Vega specification (e.g., with mark or data transform properties), and their values are determined by expressions or event streams. Event streams capture and sequence hardware events (e.g., `mousedown` or `touchmove`). When an event occurs, dependent signals are re-evaluated in their specification order. These new signal values propagate to the rest of the specification, and the visualization is re-rendered automatically.
 

@@ -1,4 +1,4 @@
-## GROUP MARKS
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Group Marks**
 
 Group marks are a special kind of mark that can contain other marks. A group mark definition is in many ways similar to the top-level [Visualization](Visualization) definition: a group can contain scales, axes, legends and marks. However, note that one can not set top-level `width`, `height`, `padding` or `data` definitions. Instead, group marks use the same `"from"` data definition and visual property sets as other marks.
 
@@ -25,7 +25,7 @@ Groups can also contain their own `scales`, `axes`, and `legends` definitions. T
 * If a scale is defined using the same name as a previously defined scale, the pre-existing scale will be shadowed (overloaded) by the new definition within the context of this group. Scale definitions cascade, so that any (non-shadowed) scales defined at a higher level are still accessible.
 * Scale domain definitions can omit the (normally required) `"data"` property. If no `"data"` property is provided in the domain definition, the group-level data will be used to determine the domain. Note that this group-level data is exactly the same data that gets passed along to child marks.
 
-## Examples
+##### Examples
 
 Groups are perhaps more easily understood by example. The visualization specifications included with the online Vega editor showcase a number of use cases for groups, including
 

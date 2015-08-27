@@ -1,4 +1,4 @@
-## VISUALIZATION
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Visualization**
 
 A visualization is the top-level object in Vega, and is the container for all visual elements. A visualization consists of a rectangular canvas (the space in which the visual elements reside) and a viewport (a window on to that canvas). In most cases the two are the same size; if the viewport is smaller then the region should be scrollable.
 

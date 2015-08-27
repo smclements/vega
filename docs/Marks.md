@@ -1,4 +1,4 @@
-## MARKS
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Marks**
 
 Marks are the basic visual building block of a visualization. Similar to other mark-based frameworks such as [Protovis](http://protovis.org), marks provide basic shapes whose properties can be set according to backing data. Mark properties can be simple constants or data fields, and [Scales](Scales) can be used to map from data to property values. The basic supported mark types are rectangles (`rect`), plotting symbols (`symbol`), general paths or polygons (`path`), circular arcs (`arc`), filled areas (`area`), lines (`line`), images (`image`) and text labels (`text`).
 
@@ -69,7 +69,7 @@ These properties can be arbitrarily nested in order to perform _indirect_ field 
 | offset        | Number        | A simple additive offset to bias the final value, equivalent to (value + offset). Offsets are added _after_ any scale transformation and multipliers.|
 | band          | Boolean       | If true, and _scale_ is specified, uses the range band of the scale as the retrieved value. This option is useful for determining widths with an ordinal scale.|
 
-## Examples
+##### Examples
 
 The constant value `5`.
 ```

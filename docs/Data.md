@@ -1,4 +1,4 @@
-## DATA
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Data**
 
 The basic data model used by Vega is _tabular_ data, similar to a spreadsheet or database table. Individual data sets are assumed to contain a collection of records (or "rows"), which may contain any number of named data attributes (fields, or "columns"). Upon load, Vega maps each data record into a data object and assigns it a unique `_id`. 
 
@@ -13,7 +13,7 @@ the input data is then loaded into data objects like this:
 
 Data sets can be specified directly (either through including the data inline or providing a URL from which to load the data), or bound dynamically at runtime (by providing data at chart instantiation time). Note that loading data from a URL will be subject to the policies of your runtime environment (e.g., cross-domain request rules).
 
-### Examples
+##### Examples
 
 Here is an example defining data directly in a specification:
 ```json

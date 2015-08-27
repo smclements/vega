@@ -1,4 +1,4 @@
-## AXES
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Axes**
 
 Axes provide axis lines, ticks and labels to convey how a spatial range represents a data range. Simply put, axes visualize scales. Vega currently supports axes for Cartesian (rectangular) coordinates. Future versions may introduce support for polar (circular) coordinates. Similar to scales, axes can be defined either at the top-level visualization, or as part of a __group__ mark.
 

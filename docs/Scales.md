@@ -1,4 +1,4 @@
-## SCALES
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Scales**
 
 Scales are functions that transform a _domain_ of data values (numbers, dates, strings, etc) to a _range_ of visual values (pixels, colors, sizes). A scale function takes a single data value as input and returns a visual value. Vega includes different types of scales for quantitative data or ordinal/categorical data.
 

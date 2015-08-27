@@ -1,4 +1,4 @@
-## RUNTIME
+> [Wiki](Home) ▸ [[Documentation]] ▸ **Runtime**
 
 The Vega runtime takes a Vega spec as input, parses it, and generates an interactive visualization in your browser using HTML5 technologies.
 
@@ -67,7 +67,7 @@ The `chart` constructor returns an instance of `vg.View`, which provides a publi
 | _duration_          | Number              | The length of an animated transition for this update, in milliseconds. If unspecified, a static (zero second) transition will be used.| 
 | _ease_              | String              | The easing function for the animated transition. The supported easing types are `linear`, `quad`, `cubic`, `sin`, `exp`, `circle`, and `bounce`, plus the modifiers `in`, `out`, `in-out`, and `out-in`. The default is `cubic-in-out`. For more details please see the [D3 ease function documentation](https://github.com/mbostock/d3/wiki/Transitions#wiki-d3_ease).|
 
-## Examples
+##### Examples
 
 Update the visualization view. Invokes the "update" property set for all marks.
 ```
@@ -98,7 +98,7 @@ view.update({props:"hover", items:item, duration:500, ease:"bounce-in"})
 | :------------------ |:-------------------:| :------------|
 | on                  | String, Function    | Adds an event listener. The first argument should be the event name to listen to (event names of the form `"click.custom"` are allowed to enable easier removal of specific listeners; the actual DOM event name is assumed to be the text before the first dot character). The second argument should be a callback function that accepts two arguments: a DOM Event object and a scenegraph item.|
 
-## Examples
+##### Examples
 
 Adds a listener function to receive "mouseover" events. This particular listener simply prints the scenegraph item being hovered over.
 ```
@@ -119,7 +119,7 @@ view.on("mouseover.custom", func)
 | :------------------ |:-------------------:| :------------|
 | off                 | String, Function    | Removes one or more event listeners. The first argument indicates the event name for which to remove listeners. If only one argument is provided, all listeners registered with that same string will be removed. The second (optional) argument should be a specific event listener callback to remove.|
 
-## Examples
+##### Examples
 
 Removes all event listeners registered for the "mouseover" event. Listeners registered with a special suffix (e.g., "mouseover.custom") will not be removed.
 ```
